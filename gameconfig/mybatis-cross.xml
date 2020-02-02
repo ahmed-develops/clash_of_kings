@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <environments default="development">
+
+		<environment id="1">
+			<transactionManager type="JDBC" />
+			<dataSource type="UNPOOLED">
+				<property name="driver" value="${local.jdbc.driver}" />
+				<property name="url" value="jdbc:mysql://DBIP:3306/cokdb1?characterEncoding=utf-8" />
+				<property name="username" value="${local.jdbc.user}" />
+				<property name="password" value="${local.jdbc.password}" />
+			</dataSource>
+		</environment>
+
+
+		<environment id="2">
+			<transactionManager type="JDBC" />
+			<dataSource type="UNPOOLED">
+				<property name="driver" value="${local.jdbc.driver}" />
+				<property name="url" value="jdbc:mysql://DBIP:3306/cokdb2?characterEncoding=utf-8" />
+				<property name="username" value="${local.jdbc.user}" />
+				<property name="password" value="${local.jdbc.password}" />
+			</dataSource>
+		</environment>
+
+    </environments>
+    <mappers>
+        <!-- 建议: 1.每一个表一个Mapper.xml -->
+        <mapper resource="com/elex/cok/puredb/dao/UserResourceMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserProfileMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserBuildingMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/QueueMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/WorldPointMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/WorldMarchMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserItemMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserGiftMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserStateMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserWorldMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserTaskMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/TrainMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserWorldPVEMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/ParseInfoMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserGeneralMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/StatLoginMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/StatRegMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/StatTutorialMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/MailMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserLordMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserScienceMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/PaylogMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/PayRequestMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/SuggestionMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/ServerAnnounceMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/ServerPushMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/PushRecordMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserActivityMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserArmyMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserHospitalMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserWallMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/AllianceGiftMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserVipMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserTalentMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/AllianceMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/AllianceMemberMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/AllianceApplyMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/AllianceShopMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/AllianceShophisMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/AllianceScienceMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/AllianceScienceUpgradeMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/AllianceCommentMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/AllianceCommentShieldMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/AllianceHelpMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/AllianceHelperMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/AllianceBattleTeamMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/PlayerinfoMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/AllianceDonateMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/ReportMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserBuildingExpMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/TimeRewardMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/ServerScoreMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/ServerTopScoreMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/ServerActivityMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/ServerInfoMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/ServerHistoryTopScoreMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserScoreMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/CityMonsterMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/ExchangeTimeMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/WorldFavoriteMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/ChatShieldMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserMineMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/MailGroupMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/ServerMailRecordMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/ActivationMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserActivationMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/ExchangeMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/ExchangeTimeMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserSkillMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/OldmailinsertMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserPrayMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/InviteeMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/InviterMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserHotItemMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserSnowballMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserSockMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/ActivityMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/User14dayLoginMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserCollectRecordMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserHotItemV2Mapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserOnlinerewardMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserEquipMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/HotBuyRecordMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/HotRefreshRecordMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/MonthlyCardMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/KingdomPositionMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/MaterialControlMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/DeviceMailRecordMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/KingPresentRecordMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/LotteryRecordMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/SignInFeedMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/ServerUpdateMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/ServerUpdateSuggestionMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/RefundLogMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/AllianceInviteMoveMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/DonateHistoryMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserMixedInfoMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserTimerewardMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserActivityNewMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserHonorMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserAchievementMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/AllianceTerritoryMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/MonsterSiegeMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserMonsterSiegeMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/MonsterSiegeTopHistoryMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserMonsterSiegeTopHistoryMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/ExchangeGiftMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserDailyTaskMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/PayTotalMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/TerritoryUserEffectMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserDragonMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/ExchangeActivityMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/TurretShootingTaskMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserCrossFightHistoryMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/KingdomCrossFightHistoryMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/InviteCountMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/SignInMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserTerritoryResourceMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/TreasureMapMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserLoginIpMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/TrialFieldMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserUsedItemMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserRegMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserMonsterSiegeHistoryMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserAssetsMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/ExchangeVisibleMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/PicUploadRecordMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/UserHotItemBestMapper.xml"/>
+        <mapper resource="com/elex/cok/puredb/dao/CelebrityMapper.xml"/>
+    </mappers>
+
+</configuration>
