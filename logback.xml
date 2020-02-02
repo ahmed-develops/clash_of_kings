@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- For assistance related to logback-translator or configuration  -->
+<!-- files in general, please contact the logback user mailing list -->
+<!-- at http://www.qos.ch/mailman/listinfo/logback-user             -->
+<!--                                                                -->
+<!-- For professional support please see                            -->
+<!--    http://www.qos.ch/shop/products/professionalSupport         -->
+<!--                                                                -->
+<configuration scan="true" scanPeriod="5 seconds">
+  <appender name="fileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <!--See http://logback.qos.ch/manual/appenders.html#RollingFileAppender-->
+    <!--and http://logback.qos.ch/manual/appenders.html#TimeBasedRollingPolicy-->
+    <!--for further documentation-->
+    <encoding>UTF-8</encoding>
+    <file>logs/smartfox.log</file>
+    <encoder>
+      <pattern>%d | %-5level | %thread | %logger{40} | %msg%n</pattern>
+    </encoder>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>logs/smartfox.log.%d{yyyy-MM-dd-HH}</fileNamePattern>
+    </rollingPolicy>
+  </appender>
+  
+   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned by default the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
+        <encoder>
+            <pattern>%d [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+	<appender name="DB" class="ch.qos.logback.classic.db.DBAppender">
+        <connectionSource class="ch.qos.logback.core.db.DriverManagerConnectionSource">
+            <driverClass>com.mysql.jdbc.Driver</driverClass>
+            <url>jdbc:mysql://127.0.0.1:3306/cokdb_monitor</url>
+            <user>cokadmin</user>
+            <password>COK123</password>
+        </connectionSource>
+    </appender>
+ 
+  <logger name="com.smartfoxserver.bitswarm.sessions.DefaultSessionManager" additivity="false" level="DEBUG">
+    <appender-ref ref="fileAppender"/>
+  </logger>
+
+  <logger name="com.elex.cok.MoniterTestException" level="ERROR">
+    <appender-ref ref="fileAppender"/>
+	<appender-ref ref="DB"/>
+  </logger>
+
+  <root level="INFO">
+    <appender-ref ref="fileAppender"/>
+    <appender-ref ref="STDOUT"/>
+  </root>
+</configuration>

@@ -1,0 +1,3 @@
+./sfs2x-service stop
+./sfs2x-service start
+tail -f logs/smartfox.log
